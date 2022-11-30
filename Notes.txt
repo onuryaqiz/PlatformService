@@ -1,0 +1,1 @@
+Model eklendikten sonra ilk işimiz DBContext'i eklemek oldu. Platform Service Architecture'daki şemada SQL Server DB'ye denk gelmektedir.
