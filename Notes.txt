@@ -1,1 +1,2 @@
 Model eklendikten sonra ilk işimiz DBContext'i eklemek oldu. Platform Service Architecture'daki şemada SQL Server DB'ye denk gelmektedir.
+Program.cs klasöründe InMemory DB'yi kullandık ve ekledik.
