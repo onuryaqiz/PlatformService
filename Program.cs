@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options=>
 options.UseInMemoryDatabase("InMem"));
 
-builder.Services.AddScoped<PlatformService.Data.IPlatformRepo,PlatformService.Data.PlatformRepo>();
+builder.Services.AddScoped<PlatformService.Data.IPlatformRepo ,PlatformService.Data.PlatformRepo>();
 
 var app = builder.Build();
 
