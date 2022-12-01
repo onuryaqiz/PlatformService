@@ -6,7 +6,7 @@ using PlatformService.Dtos;
 namespace PlatformService.Controllers
 
 {   
-    [Route("api/[controller")]
+    [Route("api")]
     [ApiController]
     public class PlatformsController:ControllerBase
     {
