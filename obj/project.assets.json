@@ -3970,11 +3970,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\Microservice_Project\\PlatformService\\PlatformService.csproj",
+      "projectUniqueName": "C:\\projects\\MicroService_new\\PlatformService\\PlatformService.csproj",
       "projectName": "PlatformService",
-      "projectPath": "C:\\projects\\Microservice_Project\\PlatformService\\PlatformService.csproj",
+      "projectPath": "C:\\projects\\MicroService_new\\PlatformService\\PlatformService.csproj",
       "packagesPath": "C:\\Users\\ultimate\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\Microservice_Project\\PlatformService\\obj\\",
+      "outputPath": "C:\\projects\\MicroService_new\\PlatformService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ultimate\\AppData\\Roaming\\NuGet\\NuGet.Config",

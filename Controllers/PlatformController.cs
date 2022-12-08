@@ -6,8 +6,8 @@ using PlatformService.Dtos;
 namespace PlatformService.Controllers
 
 {   
-    [Route("api")]
     [ApiController]
+    [Route("[controller]")]
     public class PlatformsController:ControllerBase
     {
         private readonly IPlatformRepo _repository;
