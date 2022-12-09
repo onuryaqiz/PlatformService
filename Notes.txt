@@ -4,4 +4,46 @@ PlatformRepo class'ına IPlatformRepo implemente edildi. Methodlar oluşturuldu 
 DB hazırlandı ve Seed Data eklendi. PrepDb adında bir class oluşturup , IApplicationBuilder implemente edildi.
 AutoMapper eklendi. PlatformCreate ve PlatformReadDto class'ları eklendi ve Platform class'ı ile map edildi.
 Controller eklendi. PlatformReadDto ve Methodlar oluşturuldu.
-1:51:32'de kaldım.
+InMemory'deki datalar Insomnia ile çekildi.
+Docker kuruldu. DockerFile eklendi. Eklenirken karşılaştığım hatalar : 
+    DockerFile eklenirken önce versiyon ile ilgili sorun olduğu yazıyordu. Fakat SDK 6.0 kurulduğunda da aynı sorun devam etti. 
+    Ardından Docker Desktop uygulamasına gidip ayarlardan Docker Engine'deki builtkit false yapıldı . 
+    Bu düzeltme sonrası kurulumu yaptı , fakat bir yerde tekrar hata verdi. Bu sefer de kullanıcı ile ilgili olduğu yazıyordu. Bunun için de DockerFile'a 
+    
+" 
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build 
+WORKDIR /app
+
+COPY *.csproj ./
+RUN dotnet restore 
+
+COPY . ./
+
+RUN dotnet publish -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 
+WORKDIR /app
+COPY --from=build /app/API/PlatformService.API/publish ./
+ENTRYPOINT [ "dotnet","PlatformService.dll" ]
+
+"
+eklendi . Önceki hali ;
+
+"
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
+WORKDIR /app
+
+COPY *.csproj ./
+RUN dotnet restore
+
+COPY . ./
+RUN dotnet publish -c Release -o out
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT [ "dotnet","PlatformService.dll" ]
+
+"
+
+
+3:07:02'de kaldım.
