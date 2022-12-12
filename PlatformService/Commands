@@ -1,0 +1,10 @@
+KUBERNETES;
+kubectl apply -f platforms-np-srv.yaml =  komutu service create etmeye yarıyor. 
+kubectl delete deployment platforms-depl = servisi Docker'dan siliyor.
+kubectl get pods = podları getiriyor.
+kubectl get deployments = deployment'ları getiriyor.
+DOKCER ;
+docker ps = Dcoker'daki Container'ları gösteriyor. 
+docker push = DockerHub'a commit .
+docker start = d7e6bed9f6a8/ContainerID ile Id'si verilen Container start ediliyor. 
+docker stop ContainerId(d7e6bed9f6a8)  = d7e6bed9f6a8/ContainerID ile Id'si verilen Container stop ediliyor.

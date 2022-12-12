@@ -44,6 +44,4 @@ COPY --from=build-env /app/out .
 ENTRYPOINT [ "dotnet","PlatformService.dll" ]
 
 "
-
-
-3:07:02'de kaldım.
+def1c1c commit ; Service deployment eklendi. Ve port numaraları pod'lar eklendi.
