@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
 using PlatformService.Models;
+using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,15 +16,25 @@ builder.Services.AddDbContext<AppDbContext>(options=>
 options.UseInMemoryDatabase("InMem"));
 
 builder.Services.AddScoped<PlatformService.Data.IPlatformRepo ,PlatformService.Data.PlatformRepo>();
+builder.Services.AddHttpClient<ICommandDataClient,HttpCommandDataClient>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddSwaggerGen(c=>
+c.SwaggerDoc("v1",new Microsoft.OpenApi.Models.OpenApiInfo {Title="PlatformService",Version="v1"}));
+
 var app = builder.Build();
 
+Console.WriteLine($"---> CommandService Endpoint {builder.Configuration["CommandService"]}");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c=>c.SwaggerEndpoint("/swagger/v1/swagger.json","PlatformsService v1"));
+    
+
+   
 }
 
 app.UseHttpsRedirection();
