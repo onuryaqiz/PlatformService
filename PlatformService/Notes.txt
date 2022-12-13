@@ -45,3 +45,5 @@ ENTRYPOINT [ "dotnet","PlatformService.dll" ]
 
 "
 def1c1c commit ; Service deployment eklendi. Ve port numaraları pod'lar eklendi.
+
+3:56:01'de kaldım.
