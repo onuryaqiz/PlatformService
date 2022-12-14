@@ -16,7 +16,6 @@
     </PackageReference>
     <PackageReference Include="microsoft.entityframeworkcore.InMemory" Version="7.0.0" />
     <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <Watch Include="..\**\*.env" Condition="'$(DOTNET_RUNNING_IN_CONTAINER)' != 'true'" />
