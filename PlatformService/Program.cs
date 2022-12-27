@@ -37,7 +37,8 @@ if (app.Environment.IsDevelopment())
    
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection(); //  Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+                             //   Failed to determine the https port for redirect. hatası için yorum satırı yapıldı. 
 
 app.UseAuthorization();
 
